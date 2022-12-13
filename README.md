@@ -26,7 +26,7 @@ Clone the repo by using the following:
 
 Change directory to the repo folder: 
 
-        cd flataculties
+        cd Movie-App
 
 Open it in Visual Studio Code
 
