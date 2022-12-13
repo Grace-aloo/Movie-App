@@ -27,23 +27,66 @@ function displayFilmName(film){
 }
 
 function getSingleFilm(film){
-    const title = document.createElement('h1')
+
+    const title = document.getElementById('title')
+    //title.classList.add('card-title')
     title.innerHTML = film.title
 
-    const poster =document.createElement('img')
+    const poster =document.getElementById('image')
+    //poster.classList.add( 'card-img-top')
     poster.src = film.poster
 
-    const runtime = document.createElement('p')
-    runtime.innerHTML = `runtime : ${film.runtime} 
-    showtime : ${film.showtime}`
+    const runtime = document.getElementById('runtimeTitle')
+    //runtime.classList.add('card-text')
+    runtime.innerHTML = 'Runtime'
+    const runbody = document.getElementById('body')
+    runbody.innerHTML = film.runtime
+    const showtimeTitle = document.getElementById('showtimeTitle')
+    showtimeTitle.innerHTML = 'Showtime'
+    const shbody= document.getElementById('shbody')
+    shbody.innerHTML = film.showtime
 
-    const description = document.createElement('p')
-    description.innerHTML = `description : ${ film.description}`
+    const desTitle = document.getElementById('destitle')
+    showtimeTitle.innerHTML = 'Description'
+    const desbody= document.getElementById('desbody')
+    desbody.innerHTML = film.description
 
+
+    // const description = document.createElement('p')
+    // //description.classList.add('card-text')
+    // description.innerHTML = ``
+
+    const btn = document.getElementById('button')
+    let available = film.capacity-film.tickets_sold
+    btn.innerHTML =`tickets available: ${available}`
+    btn.addEventListener('click',() => {
+        available--
+        btn.innerHTML =`tickets available: ${available}`
+        if (available <= 0){
+            btn.innerHTML = 'sold out';
+        }
+        //updatetickets(film)
+
+    })
     const me = document.getElementById('moviedisplay')
-    me.append(title)
-    me.append(poster)   
-    me.append(runtime)
-    me.append(description)
+    //me.append(cardDiv)
+    //cardDiv.append(title)
+   // cardDiv.append(poster)   
+    //cardDiv.append(runtime)
+    //me.append(description)
+    //cardDiv.append(btn)
+
+    
 
 }
+// //function updatetickets(film){
+//     fetch(`http://localhost:3000/films/${film.id}`,{
+//         method: 'PATCH',
+//         headers:{
+//             'Content-Type':'application/json'
+//         },
+//         body:JSON.stringify(film)
+//     })
+//     .then(res => res.json())
+//     .then(film => console.log(film))
+// //}

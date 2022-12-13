@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movies App</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./bootstrap.css">
+
 </head>
 <body>
     <div class="main">
@@ -13,10 +15,26 @@
             <h2>Our Movies</h2>
         </div>
         <div id="moviedisplay">
+            <div class="card col-6">
+                <h1 id="title" class="card-title"></h1>
+                <img class="card-img-top" id="image">
+                <div id="cardbody">
+                <h5 id="runtimeTitle"></h5>
+                <p id="body"></p>
+                <h5 id="showtimetitle"></h5>
+                <p id="shbody"></p>
+
+                <h5 id="destitle"></h5>
+                <p id="desbody" ></p>
+                <button id="button"></button>
+                </div>
+            </div>
 
         </div>
 
     </div>
+    <script type="text/javascript" src="./bootstrap.js"></script>
+
     <script src="./index.js"></script>
 </body>
 </html>
