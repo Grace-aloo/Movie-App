@@ -1,6 +1,7 @@
 # MOVIE APP
 
-##Description
+## Description
+
 This is an app that allows people to see the movies available when they click the name of the movie they want to view. The app also allows you to see which 
 tickets are available and buy tickets.
 
