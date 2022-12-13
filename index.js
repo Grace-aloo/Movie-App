@@ -62,16 +62,19 @@ function getSingleFilm(film){
     let available = film.capacity-film.tickets_sold
     btn.innerHTML =`tickets available: ${available}`
     btn.addEventListener('click',() => {
-        available--
+        
         btn.innerHTML =`tickets available: ${available}`
-        if (available <= 0){
+        if (available == 0 && film.tickets_sold == film.capacity){
             btn.innerHTML = 'sold out';
         }
-        if (tickets_sold == film.capacity) {
-            
+        else{
+            available--
+            film.tickets_sold ++
+            updatetickets(film)
         }
-        updatetickets(available)
-        updatetickets(film)
+
+        // updatetickets(available)
+        
 
     })
     const me = document.getElementById('moviedisplay')
@@ -87,15 +90,13 @@ function getSingleFilm(film){
 }
 function updatetickets(film){
     console.log(film);
-    // fetch(`http://localhost:3000/films/${film.id}`,{
-    //      method: 'PATCH',
-    //      headers:{
-    //         'Content-Type':'application/json'
-    //    },
-    //      body:{
-    //              "tickets_sold": tickets_sold++
-    //           }
-    //  })
-    //  .then(res => res.json())
-    //  .then(film => console.log(film))
+    fetch(`http://localhost:3000/films/${film.id}`,{
+         method: 'PATCH',
+         headers:{
+            'Content-Type':'application/json'
+       },
+         body: JSON.stringify(film)
+     })
+     .then(res => res.json())
+     .then(film => getSingleFilm(film))
 }
