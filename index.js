@@ -16,7 +16,9 @@ function getFilms(){
 
 function displayFilmName(film){
     const list = document.createElement('ul')
+    //list.classList.add('nav flex-column')
     const films = document.createElement('li')
+    //films.classList.add('nav-item')
     films.innerHTML = film.title;
     const we = document.getElementById('menu')
     we.append(list)
@@ -65,7 +67,11 @@ function getSingleFilm(film){
         if (available <= 0){
             btn.innerHTML = 'sold out';
         }
-        //updatetickets(film)
+        if (tickets_sold == film.capacity) {
+            
+        }
+        updatetickets(available)
+        updatetickets(film)
 
     })
     const me = document.getElementById('moviedisplay')
@@ -80,15 +86,16 @@ function getSingleFilm(film){
 
 }
 function updatetickets(film){
-    fetch(`http://localhost:3000/films/${film.id}`,{
-         method: 'PATCH',
-         headers:{
-            'Content-Type':'application/json'
-       },
-         body:{
-                 "tickets_sold": tickets_sold++
-              }
-     })
-     .then(res => res.json())
-     .then(film => console.log(film))
+    console.log(film);
+    // fetch(`http://localhost:3000/films/${film.id}`,{
+    //      method: 'PATCH',
+    //      headers:{
+    //         'Content-Type':'application/json'
+    //    },
+    //      body:{
+    //              "tickets_sold": tickets_sold++
+    //           }
+    //  })
+    //  .then(res => res.json())
+    //  .then(film => console.log(film))
 }

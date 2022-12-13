@@ -2,10 +2,21 @@ li{
     cursor: pointer;
      
 }
-ul {
+#menu {
     
     margin: 0;
     padding: 0;
-    height: 100%;
+    float: left;
+    /*height: 100%;*/
+    display: block;
+    
      }
+#moviedisplay{
+        display: flex;
+        flex-direction: column;
+        width:75%;
+        float: right;
+        align-items: center;
+        justify-content: space-around;
+    }
   
