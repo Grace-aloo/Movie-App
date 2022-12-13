@@ -42,12 +42,12 @@ function getSingleFilm(film){
     const runbody = document.getElementById('body')
     runbody.innerHTML = film.runtime
     const showtimeTitle = document.getElementById('showtimeTitle')
-    showtimeTitle.innerHTML = 'Showtime'
+   // showtimeTitle.innerHTML = 'Showtime'
     const shbody= document.getElementById('shbody')
     shbody.innerHTML = film.showtime
 
     const desTitle = document.getElementById('destitle')
-    showtimeTitle.innerHTML = 'Description'
+   // showtimeTitle.innerHTML = 'Description'
     const desbody= document.getElementById('desbody')
     desbody.innerHTML = film.description
 
@@ -79,14 +79,16 @@ function getSingleFilm(film){
     
 
 }
-// //function updatetickets(film){
-//     fetch(`http://localhost:3000/films/${film.id}`,{
-//         method: 'PATCH',
-//         headers:{
-//             'Content-Type':'application/json'
-//         },
-//         body:JSON.stringify(film)
-//     })
-//     .then(res => res.json())
-//     .then(film => console.log(film))
-// //}
+function updatetickets(film){
+    fetch(`http://localhost:3000/films/${film.id}`,{
+         method: 'PATCH',
+         headers:{
+            'Content-Type':'application/json'
+       },
+         body:{
+                 "tickets_sold": tickets_sold++
+              }
+     })
+     .then(res => res.json())
+     .then(film => console.log(film))
+}
