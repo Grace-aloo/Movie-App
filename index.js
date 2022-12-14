@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded",() => {
 })
 const url ="http://localhost:3000/films"
 
+//function for the GET request
 function getFilms(){
     fetch(url)
     .then(res => res.json())
@@ -13,12 +14,12 @@ function getFilms(){
         });
     })
 }
-
+//function for displaying film menu
 function displayFilmName(film){
     const list = document.createElement('ul')
     //list.classList.add('nav flex-column')
     const films = document.createElement('li')
-    //films.classList.add('nav-item')
+    films.classList.add('nav-item')
     films.innerHTML = film.title;
     const we = document.getElementById('menu')
     we.append(list)
@@ -27,7 +28,7 @@ function displayFilmName(film){
         getSingleFilm(film)
     })
 }
-
+//function for getting a single films
 function getSingleFilm(film){
 
     const title = document.getElementById('title')
@@ -76,6 +77,8 @@ function getSingleFilm(film){
   
 }
 let container =document.getElementById('ticket')
+
+//function to update tickets
 function updatetickets(film){
     console.log(film);
     fetch(`http://localhost:3000/films/${film.id}`,{
