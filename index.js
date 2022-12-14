@@ -67,7 +67,7 @@ function getSingleFilm(film){
         }
         else{
             available--
-            container.tickets_sold ++
+            film.tickets_sold ++
             updatetickets(film)
         }
 
@@ -91,7 +91,7 @@ function updatetickets(film){
          body: JSON.stringify(film)
      })
      .then(res => res.json())
-     .then(json => {
-        container.innerText = `${json.tickets_sold} tickets sold`
+     .then(film => {
+        container.innerText = `${film.tickets_sold} tickets sold`
      })
 }
