@@ -44,19 +44,14 @@ function getSingleFilm(film){
     const runbody = document.getElementById('body')
     runbody.innerHTML = film.runtime
     const showtimeTitle = document.getElementById('showtimeTitle')
-   // showtimeTitle.innerHTML = 'Showtime'
     const shbody= document.getElementById('shbody')
     shbody.innerHTML = film.showtime
 
     const desTitle = document.getElementById('destitle')
-   // showtimeTitle.innerHTML = 'Description'
     const desbody= document.getElementById('desbody')
     desbody.innerHTML = film.description
 
 
-    // const description = document.createElement('p')
-    // //description.classList.add('card-text')
-    // description.innerHTML = ``
 
     const btn = document.getElementById('button')
     let available = film.capacity-film.tickets_sold
@@ -78,16 +73,9 @@ function getSingleFilm(film){
 
     })
     const me = document.getElementById('moviedisplay')
-    //me.append(cardDiv)
-    //cardDiv.append(title)
-   // cardDiv.append(poster)   
-    //cardDiv.append(runtime)
-    //me.append(description)
-    //cardDiv.append(btn)
-
-    
-
+  
 }
+let container =document.getElementById('ticket')
 function updatetickets(film){
     console.log(film);
     fetch(`http://localhost:3000/films/${film.id}`,{
@@ -98,5 +86,7 @@ function updatetickets(film){
          body: JSON.stringify(film)
      })
      .then(res => res.json())
-     .then(film => getSingleFilm(film))
+     .then(json => {
+        container.innerText = `${json.tickets_sold} tickets sold`
+     })
 }
