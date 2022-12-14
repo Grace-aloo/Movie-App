@@ -2,14 +2,16 @@ document.addEventListener("DOMContentLoaded",() => {
     getFilms()
 
 })
-const url = "https://grace-aloo.github.io/Movie-App/db.json"
+const url = "https://grace-aloo.github.io/db/db.json"
 
 //function for the GET request
 function getFilms(){
     fetch(url)
     .then(res => res.json())
     .then(data => {
-        data.forEach(film => {
+        console.log(data.films);
+        const myData = data.films
+        myData.forEach(film => {
             displayFilmName(film)
         });
     })
