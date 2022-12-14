@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded",() => {
     getFilms()
 
 })
-const url ="http://localhost:3000/films"
+const url ="https://grace-aloo.github.io/Movie-App/db/db.json"
 
 function getFilms(){
     fetch(url)
@@ -78,7 +78,7 @@ function getSingleFilm(film){
 let container =document.getElementById('ticket')
 function updatetickets(film){
     console.log(film);
-    fetch(`http://localhost:3000/films/${film.id}`,{
+    fetch(`https://grace-aloo.github.io/Movie-App/db/db.json/${film.id}`,{
          method: 'PATCH',
          headers:{
             'Content-Type':'application/json'
