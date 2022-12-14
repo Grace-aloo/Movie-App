@@ -36,6 +36,8 @@ Open it in Visual Studio Code
 Run this command
 `json-server --watch db.json`    
 
+a link of the website is present on the links tab on the repository
+
 ## Author : Grace Aloo
 
 ## License
