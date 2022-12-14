@@ -10,8 +10,8 @@ li{
     /*height: 100%;*/
     display: block;
     width: 25%;
-    
-     }
+    background-color: #CC1620;
+    }
 #moviedisplay{
         display: flex;
         flex-direction: column;
@@ -19,9 +19,27 @@ li{
         float: right;
         align-items: center;
         justify-content: space-around;
+        
     }
 #image{
     height: 500px;
     
 }
-  
+#me{
+    background-image: url(red.webp);
+    background-size: cover ;
+}
+#card{
+    /* background-color: #FF6970;
+    /* opacity: 0;
+    transition: opacity 25s; */
+    /* color: #EA384D;
+    color:#D31027; */
+    /* background: rgb(0,0,0);
+background: linear-gradient( rgba(185,4,17,1) 28%,rgba(0,0,0,1) 0%); */
+background: rgb(0,0,0);
+background: linear-gradient( rgba(0,0,0,1) 0%,rgb(156, 14, 23),rgb(201, 10, 23) 10% ,rgb(240, 3, 19));
+} 
+h1{
+    text-align: center;
+}
