@@ -81,7 +81,7 @@ let container =document.getElementById('ticket')
 //function to update tickets
 function updatetickets(film){
     console.log(film);
-    fetch(`https://grace-aloo.github.io/db/db.json${film.id}`,{
+    fetch(`http://localhost:3000/films${film.id}`,{
          method: 'PATCH',
          headers:{
             'Content-Type':'application/json'
