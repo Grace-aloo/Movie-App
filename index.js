@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded",() => {
     getFilms()
 
 })
-const url ="http://localhost:3000/films"
+const url ="https://grace-aloo.github.io/Movie-App/db/db.json"
 
 //function for the GET request
 function getFilms(){
