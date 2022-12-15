@@ -28,17 +28,27 @@ li{
 }
 #me{
     background-image: url(red.webp);
-    background-size: cover ;
+    background-size: cover;
+}
+html,body{
+    margin: 0;
+    padding: 0;
 }
 #card{
 
 /* background-image: linear-gradient(to top, #0d0d0d, #24192a, #441f3f, #6b1e49, #941947, #a91643, #bd173b, #ce2030, #d71d30, #e1192f, #ea142e, #f40e2d); */
 background-image: linear-gradient(to top, #640c18, #75101d, #861422, #981826, #aa1d2b, #b61e2d, #c21f2e, #ce2030, #d71d30, #e1192f, #ea142e, #f40e2d);
-}
-h1{
+  }
+h1,h2{
     text-align: center;
 }
 #button{
     /* background-image: linear-gradient(to top, #640c18, #75101d, #861422, #981826, #aa1d2b, #b61e2d, #c21f2e, #ce2030, #d71d30, #e1192f, #ea142e, #f40e2d); */
       background-color: #df150e;
+      padding: 12px 20px;
+      text-align: center;
+      display: inline-block;
+      font-weight: bold;
+      border: #df150e;
+      
 }
