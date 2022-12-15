@@ -38,7 +38,8 @@ html,body{
 
 /* background-image: linear-gradient(to top, #0d0d0d, #24192a, #441f3f, #6b1e49, #941947, #a91643, #bd173b, #ce2030, #d71d30, #e1192f, #ea142e, #f40e2d); */
 background-image: linear-gradient(to top, #640c18, #75101d, #861422, #981826, #aa1d2b, #b61e2d, #c21f2e, #ce2030, #d71d30, #e1192f, #ea142e, #f40e2d);
-  }
+border: none;  
+}
 h1,h2{
     text-align: center;
 }
